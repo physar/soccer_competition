@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
@@ -29,12 +30,18 @@ public class Competition {
 			Club d = new Club("");
 			String a = d.getNaam();
 			//ArrayList<Object> voetbal1 = new ArrayList<Object>();
-			int i = 0;
 			while ((a = br.readLine()) != null) {
 				//System.out.println(a);
 				ArrayList<Object> voetbal = new ArrayList<Object>();
 				voetbal.add(a);
 				System.out.println(voetbal);
+				for(int i = 0; i < voetbal.size(); i++) {
+					for(int j = voetbal.size(); j <= 0; j--) {
+						if(voetbal.get(i) != voetbal.get(j)) {
+							System.out.println(voetbal.get(i) + "-" + voetbal.get(j)); 
+						}
+					}
+				}
 				//voetbal1.add(voetbal);
 				// TBC: create an instance of class club for each line
 			};
