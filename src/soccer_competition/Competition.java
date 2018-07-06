@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
@@ -27,13 +28,16 @@ public class Competition {
 
 			Club d = new Club("");
 			String a = d.getNaam();
-			ArrayList<String> s = new ArrayList<String>();
+			//ArrayList<Object> voetbal1 = new ArrayList<Object>();
+			int i = 0;
 			while ((a = br.readLine()) != null) {
-				System.out.println(a);
-				s.add(a);
+				//System.out.println(a);
+				ArrayList<Object> voetbal = new ArrayList<Object>();
+				voetbal.add(a);
+				System.out.println(voetbal);
+				//voetbal1.add(voetbal);
 				// TBC: create an instance of class club for each line
 			};
-			System.out.println(s);
 			
 
 		} catch (IOException e) {

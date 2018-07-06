@@ -1,5 +1,7 @@
 package soccer_competition;
 
+import java.util.Collection;
+
 public class Club {
 	private String naam;
 	
