@@ -14,11 +14,18 @@ public class Wedstrijd {
 		this.uit = uit;
 		setGoalsThuis();
 		setGoalsUit();
-		if(getGoalsThuis() == getGoalsThuis()) {
-			thuis.addPunten(1);
-			uit.addPunten(1);
+		//System.out.println(this.thuis.getNaam() + "-" + this.uit.getNaam() +
+		//		"\t" + this.getGoalsThuis() + "\t" + this.getGoalsUit());
+		if(getGoalsThuis() == getGoalsUit()) {
+			thuis.gelijkSpel(goalsThuis, goalsUit);
+			uit.gelijkSpel(goalsUit, goalsThuis);
+		}else if(getGoalsThuis() > getGoalsUit()) {
+			thuis.gewonnenWedstrijd(goalsThuis, goalsUit);
+			uit.verlorenWedstrijd(goalsUit, goalsThuis);
+		}else if(getGoalsThuis() < getGoalsUit()) {
+			thuis.verlorenWedstrijd(goalsThuis, goalsUit);
+			uit.gewonnenWedstrijd(goalsUit, goalsThuis);
 		}
-		// Winst en verlies 3-0 en 0-3
 	}
 	
     public int getGoalsThuis(){

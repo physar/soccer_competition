@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
@@ -21,18 +22,17 @@ public class Competition {
 		} else if (args.length > 1){
 			System.out.println("Give a textfile with the clubnames in the competition");
 		}
-		ArrayList<Object> voetbal = new ArrayList<Object>();
+		ArrayList<Club> voetbal = new ArrayList<Club>();
 		try {
 
 			FileReader fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
 
-			Club d = new Club("");
-			String a = d.getNaam();
+			String a = "";
 			while ((a = br.readLine()) != null) {
 				//System.out.println(a);	
-				voetbal.add(a);
-				// TBC: create an instance of class club for each line
+				Club d = new Club(a);
+				voetbal.add(d);
 			};
 			
 
@@ -44,12 +44,22 @@ public class Competition {
 		
 		for(int i = 0; i < voetbal.size(); i++) {
 			for(int j = 0; j < voetbal.size(); j++) {
-				if(voetbal.get(i) != voetbal.get(j)) {
-					System.out.println(voetbal.get(i) + "-" + voetbal.get(j)); 
+				if(voetbal.get(i).getNaam() != voetbal.get(j).getNaam()) {
+					Wedstrijd wed = new Wedstrijd(voetbal.get(i),voetbal.get(j));
 				}
 			}
 		}
-		
+		System.out.println("Pos\tClub\t\tGew\tGel\tVer\tPun\tVoo\tTeg");
+		for(int i = 0; i < voetbal.size(); i++) {
+			System.out.printf((i+1) + "\t" + "%9s" + 
+					"\t" + voetbal.get(i).getGewonnen() + "\t" + 
+					voetbal.get(i).getGelijkspelen() + "\t" + 
+					voetbal.get(i).getVerloren() + "\t" + 
+					voetbal.get(i).getPunten() + "\t"+
+					voetbal.get(i).getGoalsThuis() + "\t" +
+					voetbal.get(i).getGoalsUit() + "\t" +
+					"\n", voetbal.get(i).getNaam());
+		}
 	}
 	
 }
