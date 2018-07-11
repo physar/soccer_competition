@@ -49,8 +49,13 @@ public class Competition {
 				}
 			}
 		}
+		Collections.sort(voetbal, Collections.reverseOrder(new ClubComparator()));
 		System.out.println("Pos\tClub\t\tGew\tGel\tVer\tPun\tVoo\tTeg");
 		for(int i = 0; i < voetbal.size(); i++) {
+			
+	//		if(i > 0) {
+	//		System.out.println(voetbal.get(i).compare(voetbal.get(i), voetbal.get(i-1)));
+	//		}
 			System.out.printf((i+1) + "\t" + "%9s" + 
 					"\t" + voetbal.get(i).getGewonnen() + "\t" + 
 					voetbal.get(i).getGelijkspelen() + "\t" + 
@@ -61,5 +66,4 @@ public class Competition {
 					"\n", voetbal.get(i).getNaam());
 		}
 	}
-	
 }

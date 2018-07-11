@@ -1,5 +1,8 @@
 package soccer_competition;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Club {
 	private String naam;
 	private int goalsThuis;
@@ -47,7 +50,7 @@ public class Club {
 		this.setPunten(this.getPunten() + punten);
 	}
 
-	public int getPunten() {
+	public Integer getPunten() {
 		return punten;
 	}
 
@@ -56,7 +59,7 @@ public class Club {
 	}
 
 	public void gewonnenWedstrijd(int goalsThuis, int goalsUit) {
-		System.out.println(this.getNaam() + "\tgewonnen: (" + this.goalsThuis + "-" + this.goalsUit + ") + (" + goalsThuis + "-" + goalsUit + ")");
+		//System.out.println(this.getNaam() + "\tgewonnen: (" + this.goalsThuis + "-" + this.goalsUit + ") + (" + goalsThuis + "-" + goalsUit + ")");
 		this.addPunten(3);
 		this.goalsThuis += goalsThuis;
 		this.goalsUit += goalsUit;
@@ -65,7 +68,7 @@ public class Club {
 	}
 
 	public void verlorenWedstrijd(int goalsThuis, int goalsUit) {
-		System.out.println(this.getNaam() + "\tverloren: (" + this.goalsThuis + "-" + this.goalsUit + ") + (" + goalsThuis + "-" + goalsUit + ")");
+		//System.out.println(this.getNaam() + "\tverloren: (" + this.goalsThuis + "-" + this.goalsUit + ") + (" + goalsThuis + "-" + goalsUit + ")");
 		this.addPunten(0);
 		this.goalsThuis += goalsThuis;
 		this.goalsUit += goalsUit;
@@ -73,7 +76,7 @@ public class Club {
 	}
 
 	public void gelijkSpel(int goalsThuis, int goalsUit) {
-		System.out.println(this.getNaam() + "\tgelijk: (" + this.goalsThuis + "-" + this.goalsUit + ") + (" + goalsThuis + "-" + goalsUit + ")");
+		//System.out.println(this.getNaam() + "\tgelijk: (" + this.goalsThuis + "-" + this.goalsUit + ") + (" + goalsThuis + "-" + goalsUit + ")");
 		this.addPunten(1);
 		this.goalsThuis += goalsThuis;
 		this.goalsUit += goalsUit;
@@ -103,4 +106,7 @@ public class Club {
 	public void setGelijkspelen(int gelijkspelen) {
 		this.gelijkspelen = gelijkspelen;
 	}
+	
 }
+
+
