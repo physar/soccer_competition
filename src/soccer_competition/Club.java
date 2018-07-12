@@ -1,8 +1,5 @@
 package soccer_competition;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Club {
 	private String naam;
 	private int goalsThuis;
@@ -38,11 +35,11 @@ public class Club {
 		this.naam = naam;
 	}
 	
-    public int getGoalsThuis(){
+    public Integer getGoalsThuis(){
         return this.goalsThuis;
     }
 
-    public int getGoalsUit(){
+    public Integer getGoalsUit(){
         return this.goalsUit;
     }
 
