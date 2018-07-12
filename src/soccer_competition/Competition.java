@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.io.BufferedReader;
 import java.util.ArrayList;
@@ -49,7 +50,10 @@ public class Competition {
 				}
 			}
 		}
-		Collections.sort(voetbal, Collections.reverseOrder(new ClubComparator()));
+		List<Comparator<Club>> comparators = new ArrayList<Comparator<Club>>();
+		comparators.add(new ComparatorPoints());
+		comparators.add(new ClubComparator());
+		Collections.sort(voetbal, Collections.reverseOrder(new MultiComparator(comparators)));
 		System.out.println("Pos\tClub\t\tGew\tGel\tVer\tPun\tVoo\tTeg");
 		for(int i = 0; i < voetbal.size(); i++) {
 			

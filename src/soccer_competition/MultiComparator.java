@@ -3,7 +3,7 @@ package soccer_competition;
 import java.util.Comparator;
 import java.util.List;
 
-public class MultiComparator<Club> implements Comparator<Club> {
+public class MultiComparator implements Comparator<Club> {
 	private List<Comparator<Club>> comparators;
 	
 	public MultiComparator(List<Comparator<Club>> comparators) {
